@@ -9,6 +9,7 @@ const Cart = props => {
     const newRandomProduct = products[randomProduct];
     const [productName, setProductName] = useState([]);
     const [productObject, setProductObject] = useState([]);
+
     useEffect(() => {
         if (newRandomProduct !== productObject) {
             setProductObject(newRandomProduct);
@@ -25,8 +26,10 @@ const Cart = props => {
                 setProductName(products[Math.floor(Math.random() * 4)]);
             }
         }
+        //avoided additional dependency otherwise it calling itself
     }, [newRandomProduct])
 
+    // choose button handler 
     const chooseButton = () => {
         if (products.length === 4) {
             const randomNumber = Math.floor(Math.random() * 4);
@@ -40,12 +43,15 @@ const Cart = props => {
         }
     }
 
+    // remove button handler 
     const removeItems = () => {
         setProductName([]);
         for (let i = 0; i < 4; i++) {
             products.pop();
         }
     }
+
+    // delete button for individual deletion 
     const removeItem = id => {
         const obj = products.find(product => product.id === id);
         const index = products.indexOf(obj);
@@ -56,7 +62,6 @@ const Cart = props => {
         <div className='cart'>
             <h2>Selected Sunglasses</h2>
             {
-
                 products.map(product => <SelectedProduct removeItem={removeItem} key={product.id} product={product}></SelectedProduct>)
             }
             <button onClick={chooseButton} className="choose-button">Choose 1 for Me</button>

@@ -3,6 +3,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import './SelectedProduct.css';
 
+//this component is to show selected products
 const SelectedProduct = props => {
     const { removeItem, product } = props;
     const { img, name, id } = product;

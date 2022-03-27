@@ -3,6 +3,7 @@ import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import './Products.css';
 
+//here is two part. product and cart
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
@@ -14,6 +15,7 @@ const Products = () => {
             .then(data => setProducts(data))
     }, []);
 
+    //click handler
     const handleAddToCart = id => {
         count++;
         setCount(count);
@@ -27,9 +29,7 @@ const Products = () => {
             else {
                 alert('Maximum 4 items can be choose')
             }
-
         }
-
     }
     return (
         <div className='products-and-cart-container'>
