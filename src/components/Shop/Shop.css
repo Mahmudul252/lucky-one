@@ -1,10 +1,1 @@
-.shop{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-}
-@media screen and (max-width: 992px) {
-    .shop{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-}
+

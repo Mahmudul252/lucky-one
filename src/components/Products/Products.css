@@ -1,3 +1,6 @@
+.products-and-cart-container{
+    display: flex;
+}
 .products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,5 +12,8 @@
     .products{
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .products-and-cart-container{
+        display: block;
     }
 }
